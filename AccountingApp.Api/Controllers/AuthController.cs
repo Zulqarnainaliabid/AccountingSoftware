@@ -10,11 +10,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using Perfactcv.Api.Resources;
-using Perfactcv.Api.Settings;
-using Perfactcv.Core.Models.Auth;
+using AccountingApp.Api.Resources;
+using AccountingApp.Api.Settings;
+using AccountingApp.Core.Models.Auth;
 
-namespace Perfactcv.Api.Controllers
+namespace AccountingApp.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -15,13 +15,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Perfactcv.Core\Perfactcv.Core.csproj" />
+    <ProjectReference Include="..\AccountingApp.Core\AccountingApp.Core.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyName>Perfactcv.Data</AssemblyName>
-    <RootNamespace>Perfactcv.Data</RootNamespace>
+    <AssemblyName>AccountingApp.Data</AssemblyName>
+    <RootNamespace>AccountingApp.Data</RootNamespace>
   </PropertyGroup>
 
 </Project>

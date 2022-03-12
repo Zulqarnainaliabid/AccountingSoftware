@@ -1,14 +1,13 @@
 using System;
 using System.Threading.Tasks;
-using Perfactcv.Core.Repositories;
+using AccountingApp.Core.Repositories;
 
-namespace Perfactcv.Core
+namespace AccountingApp.Core
 {
     public interface IUnitOfWork : IDisposable
     {
-        IMusicRepository Musics { get; }
-        ICVBackupRepository CVBackups { get; }
-        IArtistRepository Artists { get; }
+        ILoanTakerRepository LoanTakers { get; }
+        ILoanDetailRepository LoanDetails{ get; }
         Task<int> CommitAsync();
     }
 }

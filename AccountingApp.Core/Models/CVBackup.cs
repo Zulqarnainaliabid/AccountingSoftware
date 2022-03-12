@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Perfactcv.Core.Models
+namespace AccountingApp.Core.Models
 {
     public class CVBackup
     {

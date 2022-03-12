@@ -1,4 +1,4 @@
-namespace Perfactcv.Api.Resources
+namespace AccountingApp.Api.Resources
 {
     public class UserSignUpResource
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace Perfactcv.Api
+namespace AccountingApp.Api
 {
     public class Program
     {

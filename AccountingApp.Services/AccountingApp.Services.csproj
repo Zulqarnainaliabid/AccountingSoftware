@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Perfactcv.Core\Perfactcv.Core.csproj" />
+    <ProjectReference Include="..\AccountingApp.Core\AccountingApp.Core.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyName>Perfactcv.Services</AssemblyName>
-    <RootNamespace>Perfactcv.Services</RootNamespace>
+    <AssemblyName>AccountingApp.Services</AssemblyName>
+    <RootNamespace>AccountingApp.Services</RootNamespace>
   </PropertyGroup>
 
 </Project>

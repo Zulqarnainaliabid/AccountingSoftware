@@ -2,19 +2,18 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Perfactcv.Core.Models;
-using Perfactcv.Core.Models.Auth;
-using Perfactcv.Data.Configurations;
+using AccountingApp.Core.Models;
+using AccountingApp.Core.Models.Auth;
+using AccountingApp.Data.Configurations;
 
-namespace Perfactcv.Data
+namespace AccountingApp.Data
 {
-    public class PerfactcvDbContext : IdentityDbContext<User, Role, Guid>
+    public class AccountingAppDbContext : IdentityDbContext<User, Role, Guid>
     {
-        public DbSet<Music> Musics { get; set; }
-        public DbSet<CVBackup> CVBackups { get; set; }
-        public DbSet<Artist> Artists { get; set; }
+        public DbSet<LoanDetail> LoanDetails { get; set; }
+        public DbSet<LoanTaker> LoanTakers { get; set; }
 
-        public PerfactcvDbContext(DbContextOptions<PerfactcvDbContext> options)
+        public AccountingAppDbContext(DbContextOptions<AccountingAppDbContext> options)
             : base(options)
         { }
 
@@ -23,10 +22,10 @@ namespace Perfactcv.Data
             base.OnModelCreating(builder);
             
             builder
-                .ApplyConfiguration(new MusicConfiguration());
+                .ApplyConfiguration(new LoanDetailConfiguration());
 
             builder
-                .ApplyConfiguration(new ArtistConfiguration());
+                .ApplyConfiguration(new LoanTakerConfiguration());
         }
     }
 }

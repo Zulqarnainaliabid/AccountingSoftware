@@ -1,7 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Identity;
 
-namespace Perfactcv.Core.Models.Auth
+namespace AccountingApp.Core.Models.Auth
 {
     public class User : IdentityUser<Guid>
     {

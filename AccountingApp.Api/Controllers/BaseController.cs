@@ -4,12 +4,12 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Perfactcv.Api.Resources;
-using Perfactcv.Api.Validations;
-using Perfactcv.Core.Models;
-using Perfactcv.Core.Services;
+using AccountingApp.Api.Resources;
+using AccountingApp.Api.Validations;
+using AccountingApp.Core.Models;
+using AccountingApp.Core.Services;
 
-namespace Perfactcv.Api.Controllers
+namespace AccountingApp.Api.Controllers
 {
     public class BaseController : ControllerBase
     {
@@ -22,6 +22,13 @@ namespace Perfactcv.Api.Controllers
             { 
                 return User.FindFirstValue(ClaimTypes.NameIdentifier); 
             } 
+        }
+        protected Guid UserIdGuid
+        {
+            get
+            {
+                return Guid.Parse(UserId);
+            }
         }
     }
 }

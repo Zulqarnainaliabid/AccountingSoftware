@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Perfactcv.Api": {
+    "AccountingApp.Api": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",

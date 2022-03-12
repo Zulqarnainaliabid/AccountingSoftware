@@ -19,9 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Perfactcv.Core\Perfactcv.Core.csproj" />
-    <ProjectReference Include="..\Perfactcv.Services\Perfactcv.Services.csproj" />
-    <ProjectReference Include="..\Perfactcv.Data\Perfactcv.Data.csproj" />
+    <ProjectReference Include="..\AccountingApp.Core\AccountingApp.Core.csproj" />
+    <ProjectReference Include="..\AccountingApp.Services\AccountingApp.Services.csproj" />
+    <ProjectReference Include="..\AccountingApp.Data\AccountingApp.Data.csproj" />
   </ItemGroup>
 
 </Project>

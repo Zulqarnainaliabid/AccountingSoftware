@@ -1,12 +1,12 @@
 using Microsoft.Extensions.DependencyInjection;
-using Perfactcv.Api.Settings;
+using AccountingApp.Api.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System;
 using Microsoft.AspNetCore.Builder;
 
-namespace Perfactcv.Api.Extensions
+namespace AccountingApp.Api.Extensions
 {
     public static class AuthExtensions
     {

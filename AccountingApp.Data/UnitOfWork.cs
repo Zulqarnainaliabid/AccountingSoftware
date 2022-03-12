@@ -1,27 +1,24 @@
 using System.Threading.Tasks;
-using Perfactcv.Core;
-using Perfactcv.Core.Repositories;
-using Perfactcv.Data.Repositories;
+using AccountingApp.Core;
+using AccountingApp.Core.Repositories;
+using AccountingApp.Data.Repositories;
 
-namespace Perfactcv.Data
+namespace AccountingApp.Data
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly PerfactcvDbContext _context;
-        private CVBackupRepository _cvBackupRepository;
-        private MusicRepository _musicRepository;
-        private ArtistRepository _artistRepository;
+        private readonly AccountingAppDbContext _context;
+        private LoanTakerRepository _loanTakerRepository;
+        private LoanDetailRepository _loanDetailRepository;
 
-        public UnitOfWork(PerfactcvDbContext context)
+        public UnitOfWork(AccountingAppDbContext context)
         {
             this._context = context;
         }
 
-        public IArtistRepository Artists => _artistRepository ??= new ArtistRepository(_context);
+        public ILoanTakerRepository LoanTakers => _loanTakerRepository ??= new LoanTakerRepository(_context);
 
-        public IMusicRepository Musics => _musicRepository ??= new MusicRepository(_context);
-
-        public ICVBackupRepository CVBackups => _cvBackupRepository ??= new CVBackupRepository(_context);
+        public ILoanDetailRepository LoanDetails => _loanDetailRepository ??= new LoanDetailRepository(_context);
 
         public async Task<int> CommitAsync()
         {

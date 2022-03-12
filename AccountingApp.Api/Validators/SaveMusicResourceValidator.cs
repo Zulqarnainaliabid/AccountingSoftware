@@ -1,19 +1,18 @@
 using FluentValidation;
-using Perfactcv.Api.Resources;
+using AccountingApp.Api.Resources;
 
-namespace Perfactcv.Api.Validations
+namespace AccountingApp.Api.Validations
 {
-    public class SaveMusicResourceValidator : AbstractValidator<SaveMusicResource>
+    public class SaveLoanDetailResourceValidator : AbstractValidator<SaveLoanDetailResource>
     {
-        public SaveMusicResourceValidator()
+        public SaveLoanDetailResourceValidator()
         {
-            RuleFor(m => m.Name)
-                .NotEmpty()
-                .MaximumLength(50);
+            RuleFor(m => m.Amount)
+                .NotEmpty();
             
-            RuleFor(m => m.ArtistId)
+            RuleFor(m => m.LoanTakerId)
                 .NotEmpty()
-                .WithMessage("'Artist Id' must not be 0.");
+                .WithMessage("'LoanTaker Id' must not be 0.");
         }
     }
 }

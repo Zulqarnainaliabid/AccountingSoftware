@@ -1,4 +1,4 @@
-namespace Perfactcv.Api.Settings
+namespace AccountingApp.Api.Settings
 {
     public class JwtSettings
     {

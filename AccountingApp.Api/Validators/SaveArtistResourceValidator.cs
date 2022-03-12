@@ -1,15 +1,16 @@
 using FluentValidation;
-using Perfactcv.Api.Resources;
+using AccountingApp.Api.Resources;
 
-namespace Perfactcv.Api.Validations
+namespace AccountingApp.Api.Validations
 {
-    public class SaveArtistResourceValidator : AbstractValidator<SaveArtistResource>
+    public class SaveLoanTakerResourceValidator : AbstractValidator<SaveLoanTakerResource>
     {
-        public SaveArtistResourceValidator()
+        public SaveLoanTakerResourceValidator()
         {
             RuleFor(a => a.Name)
                 .NotEmpty()
                 .MaximumLength(50);
+
         }
     }
 }

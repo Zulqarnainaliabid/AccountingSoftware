@@ -4,9 +4,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Perfactcv.Core.Repositories;
+using AccountingApp.Core.Repositories;
 
-namespace Perfactcv.Data.Repositories
+namespace AccountingApp.Data.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {

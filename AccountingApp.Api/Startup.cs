@@ -9,15 +9,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Perfactcv.Api.Extensions;
-using Perfactcv.Api.Settings;
-using Perfactcv.Core;
-using Perfactcv.Core.Models.Auth;
-using Perfactcv.Core.Services;
-using Perfactcv.Data;
-using Perfactcv.Services;
+using AccountingApp.Api.Extensions;
+using AccountingApp.Api.Settings;
+using AccountingApp.Core;
+using AccountingApp.Core.Models.Auth;
+using AccountingApp.Core.Services;
+using AccountingApp.Data;
+using AccountingApp.Services;
 
-namespace Perfactcv.Api
+namespace AccountingApp.Api
 {
     public class Startup
     {
@@ -36,8 +36,8 @@ namespace Perfactcv.Api
 
             services.AddControllers();
 
-            var dataAssemblyName = typeof(PerfactcvDbContext).Assembly.GetName().Name;
-            services.AddDbContext<PerfactcvDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default"), x => x.MigrationsAssembly(dataAssemblyName)));
+            var dataAssemblyName = typeof(AccountingAppDbContext).Assembly.GetName().Name;
+            services.AddDbContext<AccountingAppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Default"), x => x.MigrationsAssembly(dataAssemblyName)));
 
             services.AddIdentity<User, Role>(options =>
                 {
@@ -47,17 +47,16 @@ namespace Perfactcv.Api
                     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1d);
                     options.Lockout.MaxFailedAccessAttempts = 5;
                 })
-                .AddEntityFrameworkStores<PerfactcvDbContext>()
+                .AddEntityFrameworkStores<AccountingAppDbContext>()
                 .AddDefaultTokenProviders();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddTransient<IMusicService, MusicService>();
-            services.AddTransient<ICVBackupService, CVBackupService>();
-            services.AddTransient<IArtistService, ArtistService>();
+            services.AddTransient<ILoanDetailService, LoanDetailService>();
+            services.AddTransient<ILoanTakerService, LoanTakerService>();
 
             services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Perfact CV", Version = "v1" });
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Accounting App", Version = "v1" });
                 
                 options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
@@ -119,7 +118,7 @@ namespace Perfactcv.Api
             app.UseSwaggerUI(c =>
             {
                 c.RoutePrefix = "swagger";
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Perfact CV V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Accounting App V1");
             });
         }
     }
